@@ -6,7 +6,8 @@ function Feedback() {
         <div>
           <p>Телефон: +380673766879</p>
           <p>
-            <a href="https://github.com/xSabakin" target="_blank" rel="noreferrer">
+            <a href="https://github.com/xSabakin"
+             target="_blank" rel="noreferrer">
               Мій GitHub
             </a>
           </p>
