@@ -12,16 +12,11 @@ function Feedback() {
           </p>
         </div>
         <div>
-          <label htmlFor="email">Ваш Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="vasyl.vizichkanych.kb.2025@lpnu.ua"
-            required
-          />
+          <label htmlFor="email">Мій Email:</label>
+          <p>
+            vasyl.vizichkanych.kb.2025@lpnu.ua
+          </p>
         </div>
-        <button type="submit">Надіслати</button>
       </form>
     </section>
   );

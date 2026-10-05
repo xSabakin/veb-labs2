@@ -10,8 +10,8 @@ function App() {
       <Header />
       <Education />
       <Experience />
-      <Footer />
       <Feedback />
+      <Footer />
     </div>
   );
 }
