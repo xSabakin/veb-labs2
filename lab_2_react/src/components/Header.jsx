@@ -1,6 +1,7 @@
 function Header() {
   return (
-    <header className="flex flex-col items-center bg-gradient-to-r from-brand to-teal-500 p-10 text-white shadow-lg">
+    <header className="flex flex-col items-center bg-gradient-to-r 
+    from-brand to-teal-500 p-10 text-white shadow-lg">
       <h1 className="font-display text-4xl font-bold tracking-wide mb-2">
         Візічканич Василь
       </h1>
