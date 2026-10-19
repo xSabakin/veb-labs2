@@ -1,16 +1,20 @@
 import Header from './components/Header';
 import Education from './components/Education';
 import Experience from './components/Experience';
-import Footer from './components/Footer';
 import Feedback from './components/Feedback';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-100 text-slate-800">
       <Header />
-      <Education />
-      <Experience />
-      <Feedback />
+      <main className="mx-auto grid max-w-5xl gap-6 p-6 md:grid-cols-2">
+        <Education />
+        <Experience />
+        <div className="md:col-span-2">
+          <Feedback />
+        </div>
+      </main>
       <Footer />
     </div>
   );
