@@ -1,8 +1,84 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-/* Власні токени дизайну в Tailwind v4 (відповідь на питання 5) */
+/*Власні токени дизайну в Tailwind v4*/
 @theme {
   --color-brand: #0f766e;
   --color-brand-dark: #115e59;
   --font-display: "Georgia", serif;
+}
+
+/* ФОН САЙТУ: світла тема */
+html,
+body,
+#root {
+  background-color: #ffffff !important;
+  min-height: 100vh;
+  transition: background-color 0.3s;
+}
+
+/* ФОН САЙТУ: темна тема */
+html.dark,
+html.dark body,
+html.dark #root {
+  background-color: #0f172a !important;
+}
+
+/* Світла тема*/
+main section {
+  background-color: #cfece7;
+  color: #134e4a;
+  border: 1px solid #0f766e;
+  box-shadow: none;
+}
+main section :is(h2, h3) {
+  color: #0f5f58;
+}
+main section h2 {
+  border-bottom: 1px solid rgba(15, 118, 110, 0.5);
+}
+main section :is(p, li, span, label, strong) {
+  color: #134e4a;
+}
+
+/* Темна тема*/
+html.dark main section {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #99f6e4;
+}
+html.dark main section h2 {
+  border-bottom: 1px solid #99f6e4;
+}
+html.dark main section :is(h2, h3) {
+  color: #f0fdfa;
+}
+html.dark main section :is(p, li, span, label, strong) {
+  color: #e2e8f0;
+}
+
+/* ТЕМНА тема:*/
+html.dark body {
+  background-color: #0f172a;
+}
+html.dark main section {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+html.dark main section :is(p, li, span, label, h2, h3, strong) {
+  color: #e2e8f0;
+}
+
+/*hover для всіх карток*/
+main section {
+  position: relative;
+  transition: transform 0.75s ease, box-shadow 0.75s ease;
+}
+main section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.28);
+  z-index: 1; /* картка перекриває сусідні, а не ховається під ними */
+}
+html.dark main section:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
 }

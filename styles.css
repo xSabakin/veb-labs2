@@ -121,6 +121,7 @@ input:invalid {
 #skills     { grid-column: 1; grid-row: 3; }
 #experience { grid-column: 2; grid-row: 2 / span 2; }
 #feedback   { grid-column: 1 / -1; grid-row: 4; }
+#reviews    { grid-column: 1 / -1; grid-row: 5; }
 
 /*Для вузького екрана*/
 @media (max-width: 700px) {
@@ -128,10 +129,62 @@ input:invalid {
     grid-template-columns: 1fr;
   }
 
-  #about, #education, #skills, #experience, #feedback {
+  #about, #education, #skills, #experience, #feedback, #reviews {
     grid-column: auto;
     grid-row: auto;
   }
 
   h1 { font-size: 1.8rem; }
 }
+
+/* ===== Додайте в кінець styles.css ===== */
+
+/* Відгуки */
+#reviews-list { display: grid; gap: 12px; }
+.review { border: 1px solid #ccc; border-radius: 8px; padding: 12px; }
+.review h4 { margin: 0 0 4px; text-transform: capitalize; }
+.review-author { margin: 0 0 8px; font-size: 0.9em; opacity: 0.7; }
+
+/* Футер: localStorage */
+#storage-info { font-size: 0.8em; word-break: break-all; text-align: left; }
+.storage-row { margin-bottom: 4px; }
+
+/* Модальне вікно */
+.modal {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+}
+.modal[hidden] { display: none; }
+.modal-content {
+  position: relative; width: min(480px, 92vw);
+  background: #fff; color: #222; padding: 24px; border-radius: 12px;
+}
+.modal-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: none; font-size: 28px; cursor: pointer; color: inherit;
+}
+.modal .contact-form { display: flex; flex-direction: column; gap: 12px; }
+.modal .contact-form input,
+.modal .contact-form textarea { width: 100%; padding: 8px; }
+
+/* Перемикач теми */
+.theme-toggle { cursor: pointer; padding: 6px 12px; border-radius: 6px; border: 1px solid currentColor; background: transparent; color: inherit; }
+
+/* Нічна тема */
+body { transition: background 0.3s, color 0.3s; }
+body.dark-mode { background: #0f172a; color: #e2e8f0; }
+body.dark-mode header,
+body.dark-mode footer { background: #020617; color: #e2e8f0; }
+body.dark-mode .card { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+body.dark-mode .review { border-color: #334155; }
+body.dark-mode a { color: #5eead4; }
+body.dark-mode .modal-content { background: #1e293b; color: #e2e8f0; }
+body.dark-mode input, body.dark-mode textarea { background: #0f172a; color: #e2e8f0; border: 1px solid #475569; }
+
+/* поля модального вікна */
+.modal .contact-form input,
+.modal .contact-form textarea { max-width: none; padding: 8px 10px; border: 2px solid #94a3b8; border-radius: 6px; font: inherit; }
+.modal .contact-form button[type="submit"] { padding: 10px; border: none; border-radius: 6px; background: #0f766e; color: #fff; cursor: pointer; }
+.modal .contact-form button[type="submit"]:hover { background: #115e59; }
+body.dark-mode h2 { border-bottom-color: #134e4a; }

@@ -24,6 +24,7 @@
         <!-- 3) ВБУДОВАНІ (inline) стилі -->
         <p style="font-size: 1.2rem; letter-spacing: 1px;">Студент</p>
         <span class="badge">Кібербезпека</span>
+        <div><button id="theme-toggle" type="button" class="theme-toggle">🌙 Нічна тема</button></div>
     </header>
 
     <main class="layout">
@@ -78,11 +79,43 @@
                 </div>
             </form>
         </section>
+
+        <section class="card" id="reviews">
+            <h2>Відгуки попередніх роботодавців</h2>
+            <div id="reviews-list"></div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Усі права захищені.</p>
+        <h3>Інформація про систему (localStorage)</h3>
+        <div id="storage-info"></div>
     </footer>
+
+    <!-- Модальне вікно зворотного зв'язку-->
+    <div id="feedback-modal" class="modal" hidden>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="modal-close" type="button" class="modal-close" aria-label="Закрити">×</button>
+            <h2 id="modal-title">Форма зворотного зв’язку</h2>
+            <form action="https://formspree.io/f/xeaapjoa" method="POST" class="contact-form">
+                <label>Ім’я
+                    <input type="text" name="name" required>
+                </label>
+                <label>Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>Номер телефону
+                    <input type="tel" name="phone" required pattern="[0-9+()\s-]{7,20}">
+                </label>
+                <label>Повідомлення
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <button type="submit">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 
 </body>
 </html>
